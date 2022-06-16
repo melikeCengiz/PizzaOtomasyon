@@ -1,0 +1,21 @@
+﻿önce model claasını oluşturup public olmasına dikkat edersin,
+yoksa başka bir yerden erişemezsin özel sınıf olarak kalırsa
+,ondan sonra kapalıysa packake manager console u kullanarak
+migration işlemini yapmamız lazım,
+tools --> nuget package manager --> package manager console
+ile console açıp 
+
+"Migration-Enable" işlemi yapıldıktan sonraki adımlar aşağıda
+Add-Migration diyip isim veriyoruz örnek;
+
+Add-Migration 20220318
+
+bu işlemden sonra migration klasöründe otomatik bir dosya oluşturup
+görüntüsünü sana gösterir, şuan gerek yok ama lazım olursa diye söyleyeyim
+Up() kısmı update ile yapılacak değişiklikler fonksiyonu 
+Down() kısmı ise lazım olursa ilgili güncellemeyi geri almak istersen kullanman gereken fonksiyon
+
+
+ve Update-Database diyip değişiklikleri veritabanına gönderiyoruz.
+hata almazsak güncelleme işlemini yapmış olur.
+

@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A086C35-E014-461E-A0DE-1CAF7179A082}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Pizza_Uyg</RootNamespace>
+    <AssemblyName>Pizza_Uyg</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\BaseEntity.cs" />
+    <Compile Include="Common\FormIslemleri.cs" />
+    <Compile Include="Common\IOrtak.cs" />
+    <Compile Include="Common\IRepository.cs" />
+    <Compile Include="Context\PizzaContext.cs" />
+    <Compile Include="Entities\Ebat.cs" />
+    <Compile Include="Entities\Kenar.cs" />
+    <Compile Include="Entities\Kullanici.cs" />
+    <Compile Include="Entities\Malzeme.cs" />
+    <Compile Include="Entities\Pizza.cs" />
+    <Compile Include="Entities\Siparis.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanici\kullaniciGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanici\kullaniciGiris.Designer.cs">
+      <DependentUpon>kullaniciGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanici\SifremiUnuttum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanici\SifremiUnuttum.Designer.cs">
+      <DependentUpon>SifremiUnuttum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kullanici\YeniKullanici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kullanici\YeniKullanici.Designer.cs">
+      <DependentUpon>YeniKullanici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202241609009_20220224.cs" />
+    <Compile Include="Migrations\202202241609009_20220224.designer.cs">
+      <DependentUpon>202202241609009_20220224.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203180806113_20220318.cs" />
+    <Compile Include="Migrations\202203180806113_20220318.designer.cs">
+      <DependentUpon>202203180806113_20220318.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repository\EbatRepository.cs" />
+    <Compile Include="Repository\KenarRepository.cs" />
+    <Compile Include="Repository\KullaniciRepository.cs" />
+    <Compile Include="Repository\MalzemeRepository.cs" />
+    <Compile Include="Repository\PizzaRepository.cs" />
+    <Compile Include="Repository\SiparisRepository.cs" />
+    <Compile Include="Siparisler\frmSiparis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Siparisler\frmSiparis.Designer.cs">
+      <DependentUpon>frmSiparis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Siparisler\frmSiparisListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Siparisler\frmSiparisListesi.Designer.cs">
+      <DependentUpon>frmSiparisListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\frmEbat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\frmEbat.Designer.cs">
+      <DependentUpon>frmEbat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tanimlamalar\frmKenar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\frmKenar.Designer.cs">
+      <DependentUpon>frmKenar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\frmMalzeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\frmMalzeme.Designer.cs">
+      <DependentUpon>frmMalzeme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\frmPizza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\frmPizza.Designer.cs">
+      <DependentUpon>frmPizza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SiparisModel.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanici\kullaniciGiris.resx">
+      <DependentUpon>kullaniciGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kullanici\YeniKullanici.resx">
+      <DependentUpon>YeniKullanici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202241609009_20220224.resx">
+      <DependentUpon>202202241609009_20220224.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203180806113_20220318.resx">
+      <DependentUpon>202203180806113_20220318.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Siparisler\frmSiparis.resx">
+      <DependentUpon>frmSiparis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Siparisler\frmSiparisListesi.resx">
+      <DependentUpon>frmSiparisListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\frmEbat.resx">
+      <DependentUpon>frmEbat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Tanimlamalar\frmKenar.resx">
+      <DependentUpon>frmKenar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\frmMalzeme.resx">
+      <DependentUpon>frmMalzeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\frmPizza.resx">
+      <DependentUpon>frmPizza.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="migration_adimlari.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
